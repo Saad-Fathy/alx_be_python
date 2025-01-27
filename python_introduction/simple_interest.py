@@ -1,7 +1,6 @@
-P = 1000
-R = .05
-T = 3
+principle = 1000
+rate = .05
+time = 3
 
-I = P * R * T
-
-print("The simple interest is: " + str(I))
+interest = principle * rate * time
+print("The simple interest is: " + str(interest))
