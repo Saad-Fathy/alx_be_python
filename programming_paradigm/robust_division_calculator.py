@@ -2,14 +2,11 @@ def safe_divide(numerator, denominator):
     try:
         num = float(numerator)
         den = float(denominator)
-        return num / den
-    
-    except ZeroDivisionError:
-        raise ZeroDivisionError("Error: Cannot divide by zero.")
+        result = num / den
+        return result
     
     except ValueError:
-        raise ValueError("Error: Please enter numeric values only.")
+        return "Error: Please enter numeric values"
     
-print(safe_divide(10,5))
-print(safe_divide(10,0))
-print(safe_divide(10,"X"))
+    except ZeroDivisionError:
+        return "Error: Division by zero is not allowed"
