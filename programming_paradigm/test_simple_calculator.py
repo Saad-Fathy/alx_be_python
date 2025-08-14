@@ -12,7 +12,7 @@ class TestSimpleCalculator(unittest.TestCase):
     def test_subtraction(self):
         self.assertEqual(self.calc.subtract(6,4),2)
         
-    def test_multiply(self):
+    def test_multiplication(self):
         self.assertEqual(self.calc.multiply(5,4),20)
         
     def test_divide(self):
