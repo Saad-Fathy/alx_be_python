@@ -12,8 +12,11 @@ class Library:
         self._books.append(book)
         
     def list_available_books(self):
-        return [book for book in self._books if not book._is_checked_out]
-    
+        # return [book for book in self._books if not book._is_checked_out]
+        for book in self._books:
+            if  not book._is_checked_out:
+                print(f"{book.title} by {book.author}")
+        
     def check_out_book(self, title):
         for book in self._books:
             if book.title == title:
@@ -27,7 +30,7 @@ class Library:
     def return_book(self, title):
         for book in self._books:
             if book.title == title:
-                if book._is_checked_out
+                if book._is_checked_out:
                     book._is_checked_out = False
                     return f"Book {title} has been returned"
         return f"Book {title} not found in the library"
