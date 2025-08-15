@@ -4,6 +4,12 @@ class Book:
         self.author = author
         self._is_checked_out = False
         
+        
+    def return_book(self, title):
+        for book in self._books:
+            if book.title == title:
+                book._is_checked_out = False
+                
 class Library:
     def __init__(self):
         self._books = []
@@ -25,7 +31,3 @@ class Library:
             else:
                 return f"Book {title} not found in the library"
             
-    def return_book(self, title):
-        for book in self._books:
-            if book.title == title:
-                book._is_checked_out = False
