@@ -12,11 +12,15 @@ class Library:
         self._books.append(book)
         
     def list_available_books(self):
-        return self._books
+        return [book for book in self._books if not book._is_checked_out]
     
     def check_out_book(self, title):
-        if self._is_checked_out == False:
-            return self._books
-        else:
-            self._books.remove(title)
-            return self._books
+        for book in self._books:
+            if book.title == title:
+                if not book._is_checked_out:
+                    book._is_checked_out = True
+                    return f"Book {title} has been check out"
+                else:
+                    return f"Book {title} is already checked out"
+            else:
+                return f"Book {title} not found in the library"
