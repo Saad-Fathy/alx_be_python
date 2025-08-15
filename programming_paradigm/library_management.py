@@ -24,3 +24,8 @@ class Library:
                     return f"Book {title} is already checked out"
             else:
                 return f"Book {title} not found in the library"
+            
+    def return_book(self, title):
+        for book in self._books:
+            if book.title == title:
+                book._is_checked_out = False
